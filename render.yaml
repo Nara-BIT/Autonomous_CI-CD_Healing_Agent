@@ -1,0 +1,36 @@
+services:
+  # ── Backend (Docker) ──────────────────────────────────────────
+  - type: web
+    name: self-healing-backend
+    runtime: docker
+    region: oregon
+    plan: free
+    dockerfilePath: backend/Dockerfile
+    dockerContext: .              # monorepo root (agents/, shared/ needed)
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: GEMINI_API_KEY
+        sync: false              # set in Render dashboard
+      - key: GITHUB_TOKEN
+        sync: false              # set in Render dashboard
+      - key: GEMINI_MODEL
+        value: google/gemini-2.0-flash-001
+      - key: GEMINI_API_BASE
+        value: https://openrouter.ai/api/v1
+      - key: LOG_LEVEL
+        value: INFO
+
+  # ── Frontend (Docker) ────────────────────────────────────────
+  - type: web
+    name: self-healing-frontend
+    runtime: docker
+    region: oregon
+    plan: free
+    dockerfilePath: frontend/Dockerfile
+    dockerContext: ./frontend
+    envVars:
+      - key: VITE_API_URL
+        value: https://self-healing-backend.onrender.com
