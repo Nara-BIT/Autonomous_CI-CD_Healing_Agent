@@ -8,7 +8,7 @@ An autonomous DevOps agent with a React dashboard that detects, fixes, and verif
 |----------|-----|
 | **Live Dashboard** | https://self-healing-frontend.onrender.com/ |
 | **LinkedIn Demo Video** | https://www.linkedin.com/posts/ashishgbhargav_rift2026-hackathon-devops-activity-7430435448654827520-sujX?utm_source=share&utm_medium=member_desktop&rcm=ACoAADy39UMB5Eb-pXoE8zuEV8NUnR10hOB9fcI |
-| **GitHub Repository** | [(https://github.com/Nara-BIT/Autonomous_CI-CD_Healing_Agent)] |
+| **GitHub Repository** | https://github.com/Nara-BIT/Autonomous_CI-CD_Healing_Agent |
 
 ## 🏗 Architecture
 
